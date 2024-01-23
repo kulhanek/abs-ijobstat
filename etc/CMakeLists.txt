@@ -2,6 +2,13 @@
 # Advanced Batch System (ABS) CMake File
 # ==============================================================================
 
-ADD_SUBDIRECTORY(abs-ijobstat)
+# include subdirectories -------------------------------------------------------
+
+INSTALL(DIRECTORY
+            skel
+        DESTINATION
+            etc/
+        )
+
 
 

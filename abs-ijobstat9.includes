@@ -5,3 +5,4 @@ share/systemd
 share/etc
 share
 src/sbin/abs-ijobstat
+etc

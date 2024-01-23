@@ -1,5 +1,5 @@
 # ==============================================================================
-# AMS CMake File
+# Advanced Batch System (ABS) CMake File
 # ==============================================================================
 
 CMAKE_MINIMUM_REQUIRED(VERSION 3.10 FATAL_ERROR)
