@@ -1,11 +1,6 @@
 
 CONNECT 'localhost:/local/firebird/abs_stat-4.0.fdb' USER 'abs' PASSWORD '****' ROLE RDB$ADMIN;
 
-sql = "INSERT INTO \"STATISTICS\" (\"Site\",\"User\",\"HostName\",\"HostGroup\","
-      "\"BatchServer\",\"Queue\",\"NCPUS\",\"CPUMem\",\"NGPUS\",\"GPUMem\",\"NNODES\","
-      "\"WallTime\",\"Flags\",\"Time\") "
-      "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-
 CREATE TABLE "STATISTICS" (
     "Site"          integer,
     "User"          integer,
@@ -13,7 +8,6 @@ CREATE TABLE "STATISTICS" (
     "HostGroup"     integer,
     "BatchServer"   integer,
     "Queue"         integer,
-    "User"          integer,
     "NCPUS"         integer,
     "CPUMem"        integer,
     "NGPUS"         integer,
