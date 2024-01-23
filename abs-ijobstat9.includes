@@ -1,0 +1,7 @@
+src/sbin/ams-isoftstat
+etc
+doc
+share/systemd
+share/etc
+share
+src/sbin/abs-ijobstat

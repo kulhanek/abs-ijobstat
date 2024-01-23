@@ -1,0 +1,25 @@
+Statistics capabilities of Advanced Batch System (ABS)
+
+Internal notes:
+
+////////////////////////////////////////////////////////////////////////////////
+
+1) create database and user
+
+$ isql-fb
+> CREATE DATABASE 'localhost:/local/firebird/abs_stat-4.0.fdb' USER 'sysdba' PASSWORD '******';
+> CREATE USER abs PASSWORD '******';
+> GRANT RDB$ADMIN TO abs;
+> QUIT;
+
+////////////////////////////////////////////////////////////////////////////////
+
+2) initialize database
+
+$ isql-fb < abs-stat-init.fb
+
+////////////////////////////////////////////////////////////////////////////////
+
+
+
+

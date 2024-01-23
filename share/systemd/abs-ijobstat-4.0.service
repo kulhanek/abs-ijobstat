@@ -1,0 +1,10 @@
+[Unit]
+Description=ABS iJobStat server
+
+[Service]
+ExecStart=/opt/abs-ijobstat/4.0/sbin/abs-ijobstat /opt/abs-ijobstat/4.0/etc/stat.xml
+User=ijobstat
+UMask=077
+
+[Install]
+WantedBy=multi-user.target

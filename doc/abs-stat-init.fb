@@ -1,0 +1,45 @@
+
+CONNECT 'localhost:/local/firebird/abs_stat-4.0.fdb' USER 'abs' PASSWORD '****' ROLE RDB$ADMIN;
+
+sql = "INSERT INTO \"STATISTICS\" (\"Site\",\"User\",\"HostName\",\"HostGroup\","
+      "\"BatchServer\",\"Queue\",\"NCPUS\",\"CPUMem\",\"NGPUS\",\"GPUMem\",\"NNODES\","
+      "\"WallTime\",\"Flags\",\"Time\") "
+      "VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
+CREATE TABLE "STATISTICS" (
+    "Site"          integer,
+    "User"          integer,
+    "HostName"      integer,
+    "HostGroup"     integer,
+    "BatchServer"   integer,
+    "Queue"         integer,
+    "User"          integer,
+    "NCPUS"         integer,
+    "CPUMem"        integer,
+    "NGPUS"         integer,
+    "GPUMem"        integer,
+    "NNODES"        integer,
+    "WallTime"      integer,
+    "Flags"         integer,
+    "Time"          timestamp
+    );
+
+CREATE TABLE "KEYS" (
+    "ID"           integer NOT NULL PRIMARY KEY,
+    "Key"          varchar(128)
+    );
+
+CREATE GENERATOR gen_key_id;
+SET GENERATOR gen_key_id TO 1;
+
+set term !! ;
+CREATE TRIGGER KEY_TRIGGER FOR "KEYS"
+ACTIVE BEFORE INSERT POSITION 0
+AS
+BEGIN
+if (NEW.ID is NULL) then NEW.ID = GEN_ID(gen_key_id, 1);
+END!!
+set term ; !!
+
+COMMIT;
+

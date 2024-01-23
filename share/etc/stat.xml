@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<config
+    database="localhost:/local/firebird/abs_stat-4.0.fdb"
+    user="abs"
+    password="****"
+    port="32710">
+    <watcher enabled="true" logname="/tmp/abs-ijobstat-4.0.log">
+</config>
